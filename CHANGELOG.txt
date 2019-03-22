@@ -1,0 +1,4 @@
+22 March 2019 Wednesday
+-----------------------
+1. Meet each other and arranging task.
+2. Created Project and committed to Github.
