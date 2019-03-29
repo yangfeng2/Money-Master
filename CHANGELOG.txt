@@ -3,7 +3,10 @@
 1. Meet with Michelle and arranging task. [Yang]
 2. Created Project and committed to Github. [Yang]
 --------------------------------------
-29 March 2019 Friday, Week 4
-1. UI and UX prototyping video upload. [Michelle]
 
+29 March 2019 Friday, Week 4
+--------------------------------------
+1. UI and UX prototyping video upload. [Michelle]
+2. Creating each Sceern based on prototype. [Michelle]
+3. Coding the sceern to have some basic funcation (swap between sceen). [Yang]
 --------------------------------------
