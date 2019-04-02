@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Money Master</string>
+    <string name="let_s_get_started">Let\'s get started</string>
+    <string name="never_a_better_time_than_now_to_start">Never a better time than now to start</string>
+    <string name="thinking_about_how_you_manage_you_manage_all_your">thinking about how you manage you manage all your</string>
+    <string name="finance_and_ease">finance and ease</string>
 </resources>
