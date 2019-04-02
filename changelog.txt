@@ -21,3 +21,6 @@ Week 4, Henry notes
 01 April 2019 Tuesday, Week 5
 --------------------------------------
 1. Onboarding page created. [Michelle]
+#Simple Onboarding page#
+- Added new drawable page for Onboarding page button
+- Provide shadow to button
