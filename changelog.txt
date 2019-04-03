@@ -24,3 +24,7 @@ Week 4, Henry notes
 #Simple Onboarding page#
 - Added new drawable page for Onboarding page button
 - Provide shadow to button
+
+--------------------------------------
+# Week 5, Wednesday 3/April
+- Include multi-line comments (/* comment here */) before each function, outlining what the function does, and how to call it, and what to do with what it returns.
