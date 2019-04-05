@@ -1,7 +1,9 @@
 package com.example.moneymaster;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -16,10 +18,8 @@ public class HomeActivity extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
 
-        TextView textviewDate = findViewById(R.id.text_date);
-        textviewDate.setText(currentDate);
-
-
+        TextView textViewDate = findViewById(R.id.text_date);
+        textViewDate.setText(currentDate);
 
 
 

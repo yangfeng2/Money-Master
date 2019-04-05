@@ -4,10 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    View view;
+    View mainView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,60 +14,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        view= this.getWindow().getDecorView();
-        view.setBackgroundResource(R.color.WhiteP);
+        mainView= this.getWindow().getDecorView();
+        mainView.setBackgroundResource(R.color.WhiteP);
         /*-----------*/
 
 
     }
 
-    public void createaccount(View view)
-    {
-        String button_text;
-        button_text = ((Button) view).getText().toString();
-        if (button_text.equals("Create account" ))
-        {
-            Intent intent = new Intent (this,Register1Activity.class);
-            startActivity(intent);
-        }
-
-        else if (button_text.equals("Login"))
-        {
-            Intent intent = new Intent (this,LoginActivity.class);
-            startActivity(intent);
-        }
-
-    }
-    public void login(View view)
-    {
-        String button_text;
-        button_text = ((Button) view).getText().toString();
-        if (button_text.equals("Login"))
-        {
-            Intent intent = new Intent (this,LoginActivity.class);
-            startActivity(intent);
-        }
+    //Go to the Login Screen
+    public void GotoLoginActivity(View view) {
+        startActivity(new Intent(this,LoginActivity.class));
     }
 
-    /*--Login button Can not turn into Login activity page--*/
-   /*-----
-    public void login(View view)
-    {
+    //Go to the Register Screen
+    public void GotoRegisterActivity(View view) {
+        startActivity(new Intent(this,Register1Activity.class));
+    }
 
-        String button_text;
-        button_text = ((Button) view).getText().toString();
-        if (button_text.equals("Login" ))
-        {
-            Intent intent = new Intent (this,LoginActivity.class);
-            startActivity(intent);
-        }
-        /*-----
-        else if (button_text.equals("Login"))
-        {
-            Intent intent = new Intent (this,LoginActivity.class);
-            startActivity(intent);
-        }
-        ------*/
 }
 
 
