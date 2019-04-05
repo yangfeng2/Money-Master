@@ -29,10 +29,18 @@ Week 5, Tuesday 1/April
 # Week 5, Wednesday 3/April
 - Include multi-line comments (/* comment here */) before each function, outlining what the function does, and how to call it, and what to do with what it returns.
 
-
 --------------------------------------
-Week 5, Firday 5/April 
+Week 5, Firday 5/April [Michelle]
 Layout: Login/register/forgetpassword/home activities created
 * button created using shadow on it.
 
-*couldn't run atm, cuz Register page have some error.
+*couldn't run atm, cuz Register page have some error.(Fixed)
+
+--------------------------------------
+Week 5, Firday 5/April [Michelle]
+*home page activity created : 
+#Scoll view 
+#Floating Action button created
+
+*Created Second Main activity using Tab view activity. 
+
