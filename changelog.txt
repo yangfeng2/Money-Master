@@ -24,23 +24,35 @@ Week 5, Tuesday 1/April
 #Simple Onboarding page#
 - Added new drawable page for Onboarding page button
 - Provide shadow to button
-
 --------------------------------------
+
+
 # Week 5, Wednesday 3/April
+--------------------------------------
 - Include multi-line comments (/* comment here */) before each function, outlining what the function does, and how to call it, and what to do with what it returns.
-
 --------------------------------------
+
+
 Week 5, Firday 5/April [Michelle]
+--------------------------------------
 Layout: Login/register/forgetpassword/home activities created
-* button created using shadow on it.
-
+*button created using shadow on it.
 *couldn't run atm, cuz Register page have some error.(Fixed)
-
 --------------------------------------
+
+
 Week 5, Firday 5/April [Michelle]
+--------------------------------------
 *home page activity created : 
 #Scoll view 
 #Floating Action button created
-
 *Created Second Main activity using Tab view activity. 
+--------------------------------------
 
+
+Week 5, Friday 05-April-2019 [Yang]
+--------------------------------------
+1.Fixed the bug that the App stop running every time.
+2.Make all the screens could swap between each other.
+3.Redesign the layout to look better.
+--------------------------------------
