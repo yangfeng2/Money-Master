@@ -1,21 +1,18 @@
 package com.example.moneymaster;
 
-        import android.app.Activity;
-        import android.content.ContentValues;
-        import android.content.Intent;
-        import android.database.sqlite.SQLiteDatabase;
-        import android.os.Bundle;
-        import android.view.View;
-        import android.widget.Button;
-        import android.widget.EditText;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
-        import java.text.DateFormat;
-        import java.util.Calendar;
-        import java.util.Date;
+import java.text.DateFormat;
+import java.util.Calendar;
 
-public class IncomeActivity extends Activity {
+public class ExpenseActivity extends Activity {
 
     //variables
     public static final String TABLE_NAME = "details";
@@ -27,7 +24,7 @@ public class IncomeActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.income_activity);
+        setContentView(R.layout.expense_activity);
 
         myDBHelper = new DBHelper(this);
         addButton = findViewById(R.id.addButton);
@@ -40,7 +37,7 @@ public class IncomeActivity extends Activity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertData(currentDate,amountText.getText().toString(),"income","");
+                insertData(currentDate,amountText.getText().toString(),"expense","");
             }
         });
 

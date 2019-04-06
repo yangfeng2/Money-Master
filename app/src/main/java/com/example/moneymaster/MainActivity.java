@@ -1,12 +1,14 @@
 package com.example.moneymaster;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
-    View mainView;
+
+    DBHelper myDBHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,11 +16,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        mainView= this.getWindow().getDecorView();
-        mainView.setBackgroundResource(R.color.WhiteP);
-        /*-----------*/
+        myDBHelper = new DBHelper(this);
+        deleteDatabase();
 
+    }
 
+    // clean the database
+    public void deleteDatabase()
+    {
+        SQLiteDatabase db = myDBHelper.getReadableDatabase();
+        myDBHelper.onUpgrade(db,1,2);
     }
 
     //Go to the Login Screen
