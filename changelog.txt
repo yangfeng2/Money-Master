@@ -56,3 +56,11 @@ Week 5, Friday 05-April-2019 [Yang]
 2.Make all the screens could swap between each other.
 3.Redesign the layout to look better.
 --------------------------------------
+
+Week 5, Friday 06-April-2019 [Yang]
+--------------------------------------
+1.Redesign the floating button.
+2.Added Income button and Expense button.
+3.Code them to hide and show.
+--------------------------------------
+
