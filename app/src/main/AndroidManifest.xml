@@ -23,6 +23,7 @@
         <activity android:name=".Register1Activity"/>
         <activity android:name=".HomeActivity"/>
         <activity android:name=".AddActivity"/>
+        <activity android:name=".IncomeActivity"/>
     </application>
 
 </manifest>
