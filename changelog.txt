@@ -57,10 +57,23 @@ Week 5, Friday 05-April-2019 [Yang]
 3.Redesign the layout to look better.
 --------------------------------------
 
-Week 5, Friday 06-April-2019 [Yang]
+Week 5, Friday 05-April-2019 [Yang]
 --------------------------------------
 1.Redesign the floating button.
 2.Added Income button and Expense button.
 3.Code them to hide and show.
 --------------------------------------
 
+Week 5, Saturday 06-April-2019 [Yang]
+--------------------------------------
+1. Add SQL Database to save the details of income and expenses.
+2. Retrieve the data from database automatically.
+3. New layout for showing the income and expense.
+4. Can perform the basic core function of the app.
+   - Add an expense.
+   - Add an income.
+   - The date of expense or income created.
+   - Sum of income.
+   - Sum of expense.
+   - Net income (total - income minus expense).
+--------------------------------------
