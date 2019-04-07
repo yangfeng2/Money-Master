@@ -77,3 +77,10 @@ Week 5, Saturday 06-April-2019 [Yang]
    - Sum of expense.
    - Net income (total - income minus expense).
 --------------------------------------
+
+Week 5, Sunday 07-April-2019 [Yang]
+------------------------------------
+1. User can input their own category.
+2. Changed total to net income.
+3. User can view their net income on the Home Screen.
+------------------------------------
