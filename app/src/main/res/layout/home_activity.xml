@@ -46,10 +46,10 @@
         app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.973"
+        app:layout_constraintHorizontal_bias="0.979"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.814"
+        app:layout_constraintVertical_bias="0.813"
         app:srcCompat="@drawable/expense" />
 
     <android.support.design.widget.FloatingActionButton
@@ -68,10 +68,10 @@
         app:fabSize="normal"
         app:layout_constraintBottom_toTopOf="@+id/fab2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.97"
+        app:layout_constraintHorizontal_bias="0.976"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.97" />
+        app:layout_constraintVertical_bias="0.981" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -96,9 +96,9 @@
         android:id="@+id/text_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="12dp"
-        android:text="Total: "
+        android:text="Net Income: "
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -147,7 +147,7 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="395dp"
-        android:layout_height="424dp"
+        android:layout_height="445dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="96dp"
         android:layout_marginEnd="8dp"

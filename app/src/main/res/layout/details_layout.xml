@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="6dp"
         android:layout_marginTop="12dp"
         android:text="Date"
         android:textSize="20dp" />
@@ -32,15 +32,15 @@
 
     <TextView
         android:id="@+id/categoryText"
-        android:layout_width="133dp"
+        android:layout_width="192dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="33dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="65dp"
+        android:layout_marginEnd="36dp"
         android:layout_toStartOf="@+id/amountText"
         android:layout_toEndOf="@+id/dateText"
         android:text="Category"
-        android:textColor="#FF2DB652"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:textStyle="" />
 </RelativeLayout>

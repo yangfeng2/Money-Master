@@ -81,11 +81,11 @@ public class HomeActivity extends AppCompatActivity {
         sumIncome.setText("AU$ "+String.valueOf(totalIncome));
         sumExpense.setText("AU$ "+String.valueOf(totalExpense));
 
-        //check the total with income minus expense
+        //check the net income with income minus expense
         sumTotal = totalIncome - totalExpense;
         if (sumTotal > 0) {
             allTotal.setTextColor(Color.parseColor("#2DB652"));
-            allTotal.setText("AU$ "+String.valueOf(sumTotal));
+            allTotal.setText("+AU$ "+String.valueOf(sumTotal));
         }
         else if (sumTotal == 0)
         {

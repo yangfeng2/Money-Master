@@ -19,6 +19,7 @@ public class ExpenseActivity extends Activity {
     DBHelper myDBHelper;
     Button addButton;
     EditText amountText;
+    EditText categoryText;
     String currentDate;
 
     @Override
@@ -29,6 +30,7 @@ public class ExpenseActivity extends Activity {
         myDBHelper = new DBHelper(this);
         addButton = findViewById(R.id.addButton);
         amountText = findViewById(R.id.amountText);
+        categoryText = findViewById(R.id.categoryText);
 
         Calendar calendar = Calendar.getInstance();
         currentDate = DateFormat.getDateInstance().format(calendar.getTime());
@@ -37,7 +39,7 @@ public class ExpenseActivity extends Activity {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertData(currentDate,amountText.getText().toString(),"expense","");
+                insertData(currentDate,amountText.getText().toString(),"expense",categoryText.getText().toString().toUpperCase());
             }
         });
 
