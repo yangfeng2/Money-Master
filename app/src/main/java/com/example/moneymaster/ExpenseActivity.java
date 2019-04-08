@@ -37,6 +37,7 @@ public class ExpenseActivity extends Activity {
         currentDate = DateFormat.getDateInstance().format(calendar.getTime());
 
 
+        //the data will be added to the database when user click add button
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

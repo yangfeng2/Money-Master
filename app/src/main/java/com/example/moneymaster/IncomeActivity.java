@@ -40,6 +40,7 @@ public class IncomeActivity extends Activity {
         currentDate = DateFormat.getDateInstance().format(calendar.getTime());
 
 
+        //the data will be inserted to the database when user click the add button
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
