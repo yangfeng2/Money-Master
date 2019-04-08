@@ -93,3 +93,9 @@ Week 6, Monday 08-April-2019 [Henry]
 - I need to get serious with you here: To catch up, you'll need to do much more. If you're not intending to pass, look into withdrawing from the unit and trying again next year.
 ------------------------------------
 
+Week 6, Monday 09-April-2019 [Yang]
+------------------------------------
+1. Splash Screen created.
+2. Logo and front added.
+3. All comment are provided with the function.
+------------------------------------
