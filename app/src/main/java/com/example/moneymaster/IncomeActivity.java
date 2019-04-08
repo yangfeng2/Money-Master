@@ -17,7 +17,7 @@ package com.example.moneymaster;
 
 public class IncomeActivity extends Activity {
 
-    //variables
+    //------------ variables -------------
     public static final String TABLE_NAME = "details";
     DBHelper myDBHelper;
     Button addButton;
@@ -35,6 +35,7 @@ public class IncomeActivity extends Activity {
         amountText = findViewById(R.id.amountText);
         categoryText = findViewById(R.id.categoryText);
 
+        //get the current date
         Calendar calendar = Calendar.getInstance();
         currentDate = DateFormat.getDateInstance().format(calendar.getTime());
 

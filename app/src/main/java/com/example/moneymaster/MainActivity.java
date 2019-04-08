@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        //case the database
         myDBHelper = new DBHelper(this);
         deleteDatabase();
 

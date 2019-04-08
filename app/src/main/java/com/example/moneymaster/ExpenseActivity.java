@@ -14,7 +14,7 @@ import java.util.Calendar;
 
 public class ExpenseActivity extends Activity {
 
-    //variables
+    //---------------- variables ---------------
     public static final String TABLE_NAME = "details";
     DBHelper myDBHelper;
     Button addButton;
@@ -32,6 +32,7 @@ public class ExpenseActivity extends Activity {
         amountText = findViewById(R.id.amountText);
         categoryText = findViewById(R.id.categoryText);
 
+        //get the current date
         Calendar calendar = Calendar.getInstance();
         currentDate = DateFormat.getDateInstance().format(calendar.getTime());
 

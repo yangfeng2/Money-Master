@@ -23,7 +23,7 @@ import java.util.stream.IntStream;
 
 public class HomeActivity extends AppCompatActivity {
 
-    //variables
+    //----------------- variables ----------------------
     FloatingActionButton fab, fab1, fab2;
     boolean isFABOpen = false;
     public static final String TABLE_NAME = "details";
@@ -40,7 +40,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
 
-        //Hide the floating button
         fab2 = findViewById(R.id.fab2);
         fab1 = findViewById(R.id.fab1);
         fab2.hide();
@@ -150,6 +149,7 @@ public class HomeActivity extends AppCompatActivity {
             TextView amountView = view1.findViewById(R.id.amountText);
             TextView categoryView = view1.findViewById(R.id.categoryText);
 
+            //show the data from database
             dateView.setText(listDate.get(i));
             amountView.setText("AU$ "+listAmount.get(i));
             categoryView.setText(listCategory.get(i));
