@@ -93,9 +93,21 @@ Week 6, Monday 08-April-2019 [Henry]
 - I need to get serious with you here: To catch up, you'll need to do much more. If you're not intending to pass, look into withdrawing from the unit and trying again next year.
 ------------------------------------
 
-Week 6, Monday 09-April-2019 [Yang]
+Week 6, Monday 08-April-2019 [Yang]
 ------------------------------------
 1. Splash Screen created.
 2. Logo and front added.
 3. All comment are provided with the function.
 ------------------------------------
+
+Week 6, Wednesday 10-April-2019 [Yang]
+------------------------------------
+1. Add Setting Flouting Button on Home Screen.
+2. Created Setting screen.
+3. Created Lock Screen and write function to lock and unlock.
+  - User can set a password to lock the app.
+  - User can unlock the app every time.
+4. The app will detect the password automatically.
+  - If a password is set. Let the user enter password and match with the password which is saved as sharedpreferences.
+  - If there is no password is set. Go to the Main Screen directly.
+-------------------------------------
