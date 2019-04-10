@@ -46,10 +46,10 @@
         app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintHorizontal_bias="0.982"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813"
+        app:layout_constraintVertical_bias="0.706"
         app:srcCompat="@drawable/expense" />
 
     <android.support.design.widget.FloatingActionButton
@@ -68,10 +68,10 @@
         app:fabSize="normal"
         app:layout_constraintBottom_toTopOf="@+id/fab2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintHorizontal_bias="0.982"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.981" />
+        app:layout_constraintVertical_bias="0.993" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -79,19 +79,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="@color/colorAccent"
         android:onClick="showFABMenu"
         android:src="@drawable/logo"
         app:backgroundTint="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.973"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fab2"
-        app:layout_constraintVertical_bias="0.38" />
+        app:layout_constraintHorizontal_bias="0.985"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <TextView
@@ -152,7 +149,7 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="395dp"
-        android:layout_height="439dp"
+        android:layout_height="182dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="112dp"
         android:layout_marginEnd="8dp"
@@ -168,7 +165,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/advent_pro_medium"
+        android:fontFamily="@font/advent_pro_bold"
         android:text="-"
         android:textColor="#FF2DB652"
         android:textSize="22dp"
@@ -184,7 +181,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/advent_pro_medium"
+        android:fontFamily="@font/advent_pro_bold"
         android:text="-"
         android:textColor="@color/Red"
         android:textSize="22dp"
@@ -200,13 +197,28 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/advent_pro_medium"
+        android:fontFamily="@font/advent_pro_bold"
         android:text="-"
         android:textSize="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.805"
         app:layout_constraintStart_toEndOf="@+id/text_date"
         app:layout_constraintTop_toBottomOf="@+id/totalExpense" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:onClick="showSetting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.982"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fab2"
+        app:srcCompat="@drawable/setting" />
 
 
 </android.support.constraint.ConstraintLayout>

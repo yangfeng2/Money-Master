@@ -1,6 +1,7 @@
 package com.example.moneymaster;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -19,8 +20,31 @@ public class SplashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
+                if(appLocked()){
+                    Intent mainIntent = new Intent(SplashScreenActivity.this, LockScreenActivity.class);
+                    startActivity(mainIntent);
+                    finish();
+                }
+                else {
+                    Intent mainIntent = new Intent(SplashScreenActivity.this, MainActivity.class);
+                    startActivity(mainIntent);
+                    finish();
+                }
             }
-        }, splashTime);
+        },splashTime);
+    }
+
+
+    //check the app is locked or unlocked
+    public boolean appLocked()
+    {
+        SharedPreferences settings = getSharedPreferences("password",0);
+        String password = settings.getString("hashPassword","error");
+
+        if(password.equalsIgnoreCase("error") || password.equals("noPassword"))
+        {
+            return false;
+        }
+        return true;
     }
 }

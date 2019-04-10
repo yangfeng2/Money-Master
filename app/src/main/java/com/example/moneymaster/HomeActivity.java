@@ -24,7 +24,7 @@ import java.util.stream.IntStream;
 public class HomeActivity extends AppCompatActivity {
 
     //----------------- variables ----------------------
-    FloatingActionButton fab, fab1, fab2;
+    FloatingActionButton fab1, fab2, fab3;
     boolean isFABOpen = false;
     public static final String TABLE_NAME = "details";
     DBHelper myDBHelper;
@@ -40,8 +40,10 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
 
+        fab3 = findViewById(R.id.fab3);
         fab2 = findViewById(R.id.fab2);
         fab1 = findViewById(R.id.fab1);
+        fab3.hide();
         fab2.hide();
         fab1.hide();
 
@@ -177,12 +179,14 @@ public class HomeActivity extends AppCompatActivity {
     public void showFABMenu(View view){
         if(isFABOpen == false)
         {
+            fab3.show();
             fab2.show();
             fab1.show();
             isFABOpen = true;
         }
         else
         {
+            fab3.hide();
             fab2.hide();
             fab1.hide();
             isFABOpen = false;
@@ -198,4 +202,7 @@ public class HomeActivity extends AppCompatActivity {
     public void showExpense(View view){
         startActivity(new Intent(this, ExpenseActivity.class));
     }
+
+    //Go to the setting screen
+    public void showSetting(View view) {startActivity(new Intent(this,SettingActivity.class));}
 }
