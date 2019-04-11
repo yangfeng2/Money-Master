@@ -111,3 +111,11 @@ Week 6, Wednesday 10-April-2019 [Yang]
   - If a password is set. Let the user enter password and match with the password which is saved as sharedpreferences.
   - If there is no password is set. Go to the Main Screen directly.
 -------------------------------------
+
+Week 6, Thursday 11-April-2019 [Henry]
+------------------------------------
+- Good, BUT: Both of you: function comments. I made a big fuss about this on the unit site last week.
+
+------------------------------------
+
+
