@@ -126,4 +126,19 @@ Week 7, Monday 15-April-2019 [Henry]
 ------------------------------------
 
 
+Week 7, Monday 15-April-2019 [Yang] [2H30M]
+-----------------------------------
+1. Created the About Screen
+   - Show the Licenses.
+2. User can erase the data.
+   - A new function is created in setting screen.
+   - Click on the button and erase the database.
+3. Comment of function.
+   - Provided the single line comment on every function instead
+   of mutli-line function comment.
+4. Delete unnecessary files and rearrange all the files.
+-----------------------------------
+
+
+
 
