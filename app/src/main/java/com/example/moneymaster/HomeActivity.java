@@ -40,9 +40,11 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_activity);
 
+        //find the floating buttons
         fab3 = findViewById(R.id.fab3);
         fab2 = findViewById(R.id.fab2);
         fab1 = findViewById(R.id.fab1);
+        //hide the floating buttons
         fab3.hide();
         fab2.hide();
         fab1.hide();
@@ -50,6 +52,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
+        //cast the database
         myDBHelper = new DBHelper(this);
         listView = findViewById(R.id.listView);
         displayDetails();
@@ -57,7 +60,16 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-    //show the total of income and expense
+    /*
+        ----- Show The Total of Income and Expense -------
+
+        1.Get the amount of income and expense from the list.
+        2.Add them together.
+        3.Show the total to user.
+        4.Calculate the net income.
+
+
+     */
     public void showTotal()
     {
         TextView sumIncome = findViewById(R.id.totalIncome);
@@ -105,6 +117,7 @@ public class HomeActivity extends AppCompatActivity {
 
         Cursor cursor = db.query(TABLE_NAME, allColumns, null,null,null,null,null);
 
+        //keep processing until the next entry is empty
         while (cursor.moveToNext())
         {
             listDate.add(cursor.getString(cursor.getColumnIndex("date")));

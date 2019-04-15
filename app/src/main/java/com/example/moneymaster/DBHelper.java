@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    //---------SQL Database for saving the income and expense----------------
+    //--------- SQL Database for saving the income and expense ----------------
     public  static  final String TABLE_NAME = "details";
     public  static  final String COLUMN_DATE = "date";
     public  static  final String COLUMN_AMOUNT = "amount";

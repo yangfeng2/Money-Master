@@ -33,6 +33,7 @@ public class LockActivity extends AppCompatActivity {
         cancelButton = findViewById(R.id.clcButton);
         addPassword = findViewById(R.id.addPassword);
 
+        //go back to the setting screen
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,6 +41,7 @@ public class LockActivity extends AppCompatActivity {
             }
         });
 
+        //try to add password and catch the exception
         addPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

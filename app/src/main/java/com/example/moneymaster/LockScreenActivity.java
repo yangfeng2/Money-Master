@@ -56,7 +56,7 @@ public class LockScreenActivity extends AppCompatActivity {
 
         if(correctPassword.equals(typedPassword))
         {
-            startActivity(new Intent(LockScreenActivity.this,MainActivity.class));
+            startActivity(new Intent(LockScreenActivity.this,HomeActivity.class));
         }
         else
         {

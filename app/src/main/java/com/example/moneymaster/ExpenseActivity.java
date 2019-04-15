@@ -47,9 +47,10 @@ public class ExpenseActivity extends Activity {
 
     }
 
-    //the function of insert data into database
+    // the function of insert data into database
     public  void insertData(String date, String amount, String type, String category)
     {
+        //get the data from user
         ContentValues values = new ContentValues();
         values.put("date",date);
         int amountInt = Integer.parseInt(amount);
@@ -57,6 +58,7 @@ public class ExpenseActivity extends Activity {
         values.put("type",type);
         values.put("category",category);
 
+        //put into the SQL database
         SQLiteDatabase db = myDBHelper.getWritableDatabase();
         db.insert(TABLE_NAME, null,values);
         startActivity(new Intent(this, HomeActivity.class));
