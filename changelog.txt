@@ -118,4 +118,12 @@ Week 6, Thursday 11-April-2019 [Henry]
 
 ------------------------------------
 
+Week 7, Monday 15-April-2019 [Henry]
+------------------------------------
+- Feedback: Some functions still don't have multi-line function comments.
+- Feedback: I feel your project is falling a bit behind, and you're not putting in enough time to pass. Show me 10-14 hours each per week.. where was it spent? [Henry]
+- Feedback: I want you to start writing the time taken per changelog item (in brackets at the end of each line), so that you can see where time is being spent / not being spent enough. [Henry]
+------------------------------------
+
+
 
