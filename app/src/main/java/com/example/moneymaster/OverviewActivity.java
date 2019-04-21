@@ -77,7 +77,7 @@ public class OverviewActivity extends AppCompatActivity {
                     //save the index of maximum amount
                     maxIndex = i;
                 }
-                //show the the amount and category of biggest income
+                //show the the amount and category of biggest expense
                 biggestExpenseCategory.setText(listCategory.get(maxIndex));
                 biggestExpenseAmount.setText("AU$ "+String.valueOf(maxExpense));
             }
