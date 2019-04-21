@@ -126,7 +126,7 @@ Week 7, Monday 15-April-2019 [Henry]
 ------------------------------------
 
 
-Week 7, Monday 15-April-2019 [Yang] [2H30M]
+Week 7, Monday 15-April-2019 [Yang] [3H]
 -----------------------------------
 1. Created the About Screen
    - Show the Licenses.
@@ -139,6 +139,17 @@ Week 7, Monday 15-April-2019 [Yang] [2H30M]
 4. Delete unnecessary files and rearrange all the files.
 -----------------------------------
 
+
+Week 7, Sunday 21-April-2018 [Yang] [5H]
+-----------------------------------
+1. Created overview Screen
+ - User can check the biggest expense and income
+   - Show the category and amount of biggest income.
+   - Show the category and amount of biggest expense.
+2. Modified home Screen
+ - Created a transparent overview button.
+ - Moved net income into overview screen.
+ ----------------------------------
 
 
 
