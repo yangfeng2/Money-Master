@@ -66,48 +66,26 @@ public class HomeActivity extends AppCompatActivity {
         1.Get the amount of income and expense from the list.
         2.Add them together.
         3.Show the total to user.
-        4.Calculate the net income.
 
 
      */
-    public void showTotal()
-    {
+    public void showTotal() {
         TextView sumIncome = findViewById(R.id.totalIncome);
         TextView sumExpense = findViewById(R.id.totalExpense);
-        TextView allTotal = findViewById(R.id.allTotal);
         int totalIncome = 0;
         int totalExpense = 0;
-        int sumTotal= 0;
+        int sumTotal = 0;
 
-        for(int i=0;i<listAmount.size();i++)
-        {
-            if(listType.get(i).equals("income"))
-            {
+        for (int i = 0; i < listAmount.size(); i++) {
+            if (listType.get(i).equals("income")) {
                 totalIncome += listAmount.get(i);
-            }
-            else
-            {
+            } else {
                 totalExpense += listAmount.get(i);
             }
         }
 
-        sumIncome.setText("AU$ "+String.valueOf(totalIncome));
-        sumExpense.setText("AU$ "+String.valueOf(totalExpense));
-
-        //check the net income with income minus expense
-        sumTotal = totalIncome - totalExpense;
-        if (sumTotal > 0) {
-            allTotal.setTextColor(Color.parseColor("#2DB652"));
-            allTotal.setText("+AU$ "+String.valueOf(sumTotal));
-        }
-        else if (sumTotal == 0)
-        {
-            return;
-        }
-        else {
-            allTotal.setTextColor(Color.parseColor("#BF1333"));
-            allTotal.setText("-AU$ "+ String.valueOf(-sumTotal));
-        }
+        sumIncome.setText("AU$ " + String.valueOf(totalIncome));
+        sumExpense.setText("AU$ " + String.valueOf(totalExpense));
     }
 
     // getting the date, category, type, category and amount from the database
@@ -205,6 +183,9 @@ public class HomeActivity extends AppCompatActivity {
             isFABOpen = false;
         }
     }
+
+    //Go to the overview screen
+    public void showOverview(View view) {startActivity(new Intent(this,OverviewActivity.class));}
 
     //Go to the income screen
     public void showIncome(View view){

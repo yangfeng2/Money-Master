@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".OverviewActivity"></activity>
+        <activity android:name=".AboutActivity" />
         <activity android:name=".LockScreenActivity" />
         <activity android:name=".LockActivity" />
         <activity android:name=".SplashScreenActivity">
