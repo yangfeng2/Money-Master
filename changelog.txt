@@ -140,7 +140,7 @@ Week 7, Monday 15-April-2019 [Yang] [3H]
 -----------------------------------
 
 
-Week 7, Sunday 21-April-2018 [Yang] [5H]
+Week 7, Sunday 21-April-2019 [Yang] [5H]
 -----------------------------------
 1. Created overview Screen
  - User can check the biggest expense and income
@@ -150,6 +150,15 @@ Week 7, Sunday 21-April-2018 [Yang] [5H]
  - Created a transparent overview button.
  - Moved net income into overview screen.
  ----------------------------------
+ 
+Week 8, Friday 26-April-2019 [Yang] [3Hours+]
+-----------------------------------
+1. Implemented MPAndroidChart documentation.
+2. Created a pie chart in overview page.
+  - Created a pie chart for incomes and expenses.
+  - Green color for income and red color for expenses.
+  - Comments provided on each function.
+-----------------------------------
 
 
 
