@@ -5,13 +5,25 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
+
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class OverviewActivity extends AppCompatActivity {
 
+    //----------------------- variables ----------------------
     public static final String TABLE_NAME = "details";
     DBHelper myDBHelper;
     String[] allColumns = new String[] {"date", "amount", "type", "category"};
@@ -19,6 +31,16 @@ public class OverviewActivity extends AppCompatActivity {
     List<Integer> listAmount = new ArrayList<>();
     List<String> listType = new ArrayList<>();
     List<String> listCategory = new ArrayList<>();
+
+    //----------------------- variables of pie chart ---------
+    private static String TAG = "OverviewActivity";
+    PieChart pieChart;
+    //use to store the amount
+    List<Integer> yData = new ArrayList<>();
+    //use to define the category
+    private String[] xData = {"Incomes", "Expenses"};
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +58,72 @@ public class OverviewActivity extends AppCompatActivity {
 
         //show the biggest income and expense
         showBiggestIncExp();
+
+        //begin to create the pie chart
+        pieChart = findViewById(R.id.pieChart);
+
+        Description description = new Description();
+        description.setText("");
+        pieChart.setDescription(description);
+        pieChart.setHoleRadius(23f);
+        pieChart.setTransparentCircleAlpha(0);
+        pieChart.setCenterText("Incomes & Expenses");
+        pieChart.setCenterTextSize(14);
+
+        addDataToPieChart();
+
+        pieChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, Highlight h) {
+                Log.d(TAG, "onValueSelected: Value selected from chart");
+                Log.d(TAG, "onValueSelected: " + e.toString());
+                Log.d(TAG, "onValueSelected: " + h.toString());
+            }
+
+            @Override
+            public void onNothingSelected() {
+
+            }
+        });
+    }
+
+    // ---------------------- Method of create a pie chart ------------------------------
+    private void addDataToPieChart() {
+        //created list for the amount and category
+        List<PieEntry> yEntrys = new ArrayList<>();
+        List<String> xEntrys = new ArrayList<>();
+
+        //transfer the amount list to yEntrys list
+        for(int i = 0; i < yData.size(); i++) {
+            yEntrys.add(new PieEntry(yData.get(i)));
+        }
+
+        //transfer the amount list to xEntrys list
+        for(int i = 0; i < xData.length; i++) {
+            xEntrys.add(xData[i]);
+        }
+
+        //create the date
+        PieDataSet pieDataSet = new PieDataSet(yEntrys, "Incomes & Expenses");
+        pieDataSet.setSliceSpace(2);
+        pieDataSet.setValueTextSize(20);
+
+        //add colors to the data
+        ArrayList<Integer> colors = new ArrayList<>();
+        colors.add(Color.GREEN);
+        colors.add(Color.RED);
+
+        pieDataSet.setColors(colors);
+
+        //add legend to the pie chart
+        Legend legend = pieChart.getLegend();
+        legend.setForm(Legend.LegendForm.CIRCLE);
+        legend.setPosition(Legend.LegendPosition.LEFT_OF_CHART);
+
+        //create pie data object
+        PieData pieData = new PieData(pieDataSet);
+        pieChart.setData(pieData);
+        pieChart.invalidate();
     }
 
     // ---------------- Method of find biggest expense and income ------------------------
@@ -120,6 +208,10 @@ public class OverviewActivity extends AppCompatActivity {
 
         sumIncome.setText("AU$ "+String.valueOf(totalIncome));
         sumExpense.setText("AU$ "+String.valueOf(totalExpense));
+
+        //save the total amount into the yData for pie chart
+        yData.add(totalIncome);
+        yData.add(totalExpense);
 
         //check the net income with income minus expense
         sumTotal = totalIncome - totalExpense;
