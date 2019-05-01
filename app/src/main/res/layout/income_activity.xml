@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/incomeActivity"
+    >
 
     <EditText
         android:id="@+id/amountText"
@@ -21,11 +23,11 @@
         android:textColor="#ff2db652"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintStart_toEndOf="@+id/incomeTextView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/incomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -37,7 +39,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/CategoryTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -46,7 +48,7 @@
         android:textSize="22dp"
         android:fontFamily="@font/advent_pro_medium"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/incomeTextView" />
 
     <Button
         android:id="@+id/addButton"
@@ -75,9 +77,10 @@
         android:inputType="textPersonName"
         android:fontFamily="@font/advent_pro_medium"
         android:hint="-"
+        android:textColorHint="@color/White"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintStart_toEndOf="@+id/CategoryTextView"
         app:layout_constraintTop_toBottomOf="@+id/amountText" />
 
 </android.support.constraint.ConstraintLayout>

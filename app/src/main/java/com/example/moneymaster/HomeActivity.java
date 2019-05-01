@@ -1,6 +1,7 @@
 package com.example.moneymaster;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -48,16 +49,37 @@ public class HomeActivity extends AppCompatActivity {
         fab3.hide();
         fab2.hide();
         fab1.hide();
-
-
-
-
         //cast the database
         myDBHelper = new DBHelper(this);
         listView = findViewById(R.id.listView);
         displayDetails();
         showTotal();
+        //check the theme selected
+        checkTheme();
+    }
 
+    //check the theme is dark or light
+    public void checkTheme()
+    {
+        View view = findViewById(R.id.homeActivity);
+
+        String currentTheme = currentTheme();
+        //dark theme found
+        if (currentTheme.equals("darkTheme")){
+            view.setBackgroundColor(Color.parseColor("#000000"));
+        }
+        //light theme found
+        else {
+            view.setBackgroundColor(Color.parseColor("#ffffff"));
+        }
+    }
+
+    //retrieve the data from typeTheme file
+    public String currentTheme()
+    {
+        SharedPreferences settings = getSharedPreferences("themes",0);
+        String currentTheme = settings.getString("typeTheme","error");
+        return  currentTheme;
     }
 
     /*
@@ -146,6 +168,12 @@ public class HomeActivity extends AppCompatActivity {
             dateView.setText(listDate.get(i));
             amountView.setText("AU$ "+listAmount.get(i));
             categoryView.setText(listCategory.get(i));
+
+            //check the type of theme
+            if (currentTheme().equals("darkTheme")){
+                dateView.setTextColor(Color.parseColor("#ffffff"));
+                categoryView.setTextColor(Color.parseColor("#ffffff"));
+            }
 
 
             //change the color of amount
