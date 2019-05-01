@@ -160,5 +160,14 @@ Week 8, Friday 26-April-2019 [Yang] [3Hours+]
   - Comments provided on each function.
 -----------------------------------
 
+Week 8, Wednesday 01-May-2019 [Yang] [3Hours 20Mins]
+------------------------------------
+1. Add dark theme.
+2. User can choose between dark theme and light theme
+  - Select Dark Theme or Light Theme in Setting page.
+  - Use sharedperences to store the type of theme.
+  - Retrieve data and check the type every time the user open the app.
+------------------------------------
+
 
 
