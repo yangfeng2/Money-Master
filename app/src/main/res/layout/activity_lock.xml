@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/lockActivity"
     tools:context=".LockActivity"
     >
 
@@ -15,6 +16,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="133dp"
         android:ems="10"
+        android:hint="-"
+        android:textColorHint="@color/White"
         android:inputType="textPassword" />
 
     <EditText
@@ -25,10 +28,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="258dp"
         android:ems="10"
+        android:hint="-"
+        android:textColorHint="@color/White"
         android:inputType="textPassword" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/password2View"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -40,7 +45,7 @@
         />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/passwordView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

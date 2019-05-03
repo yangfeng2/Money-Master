@@ -1,11 +1,14 @@
 package com.example.moneymaster;
 
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.PieChart;
@@ -47,6 +50,9 @@ public class OverviewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_overview);
 
+        //check the current theme
+        checkTheme();
+
         //cast the database
         myDBHelper = new DBHelper(this);
 
@@ -85,6 +91,36 @@ public class OverviewActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    //check the theme is dark or light
+    public void checkTheme()
+    {
+        View view = findViewById(R.id.overActivity);
+        TextView netIncome = findViewById(R.id.netIncomeText);
+        TextView incomeCategory = findViewById(R.id.incomeCategory);
+        TextView expenseCategory = findViewById(R.id.expenseCategory);
+
+        String currentTheme = currentTheme();
+        //dark theme found
+        if (currentTheme.equals("darkTheme")){
+            view.setBackgroundColor(Color.parseColor("#000000"));
+            netIncome.setTextColor(Color.parseColor("#ffffff"));
+            incomeCategory.setTextColor(Color.parseColor("#ffffff"));
+            expenseCategory.setTextColor(Color.parseColor("#ffffff"));
+        }
+        //light theme found
+        else {
+            view.setBackgroundColor(Color.parseColor("#ffffff"));
+        }
+    }
+
+    //retrieve the data from typeTheme file
+    public String currentTheme()
+    {
+        SharedPreferences settings = getSharedPreferences("themes",0);
+        String currentTheme = settings.getString("typeTheme","error");
+        return  currentTheme;
     }
 
     // ---------------------- Method of create a pie chart ------------------------------

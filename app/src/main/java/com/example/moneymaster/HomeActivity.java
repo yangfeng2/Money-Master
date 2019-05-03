@@ -62,11 +62,13 @@ public class HomeActivity extends AppCompatActivity {
     public void checkTheme()
     {
         View view = findViewById(R.id.homeActivity);
+        TextView overviewText = findViewById(R.id.overviewText);
 
         String currentTheme = currentTheme();
         //dark theme found
         if (currentTheme.equals("darkTheme")){
             view.setBackgroundColor(Color.parseColor("#000000"));
+            overviewText.setTextColor(Color.parseColor("#ffffff"));
         }
         //light theme found
         else {

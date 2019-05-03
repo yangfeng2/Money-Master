@@ -11,9 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.regex.Pattern;
 
 public class ExpenseActivity extends Activity {
 
@@ -24,6 +28,7 @@ public class ExpenseActivity extends Activity {
     EditText amountText;
     EditText categoryText;
     String currentDate;
+    ArrayList<String> logMsg = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -83,20 +88,65 @@ public class ExpenseActivity extends Activity {
         return  currentTheme;
     }
 
-    // the function of insert data into database
+    /*--------------- the function of insert data into database ----------------------
+        1.Check the category is correct or incorrect
+        -Insert into SQL database if it is correct
+        -Show exception in log page if it is incorrect
+     */
     public  void insertData(String date, String amount, String type, String category)
     {
-        //get the data from user
+        boolean checkText = true;
+
         ContentValues values = new ContentValues();
         values.put("date",date);
-        int amountInt = Integer.parseInt(amount);
-        values.put("amount",amountInt);
-        values.put("type",type);
-        values.put("category",category);
+        //int amountInt = Integer.parseInt(amount);
+        if (amount.equals(""))
+        {
+            //display a message to user
+            Toast.makeText(getApplicationContext(),"Please enter a correct amount ! ",Toast.LENGTH_LONG).show();
 
-        //put into the SQL database
-        SQLiteDatabase db = myDBHelper.getWritableDatabase();
-        db.insert(TABLE_NAME, null,values);
-        startActivity(new Intent(this, HomeActivity.class));
+            //send log details to the log page with sharedpreference
+            Date currentTime = Calendar.getInstance().getTime();
+            String value = "Amount is incorrect. Occurred at "+currentTime;
+            logMsg.add(value);
+
+            checkText = false;
+        }
+        else {
+            values.put("amount",amount);
+        }
+        values.put("type",type);
+        if(stringContainsNumber(category))
+        {
+            //display a message to user
+            Toast.makeText(getApplicationContext(),"Please enter a correct category ! ",Toast.LENGTH_LONG).show();
+
+            //send log details to the log page with sharedpreference
+            Date currentTime = Calendar.getInstance().getTime();
+            String value = category +" is a wrong category format. Occurred at "+currentTime;
+            logMsg.add(value);
+
+            checkText = false;
+        }
+        else {
+            values.put("category",category);
+        }
+
+        if (checkText == true)
+        {
+            SQLiteDatabase db = myDBHelper.getWritableDatabase();
+            db.insert(TABLE_NAME, null,values);
+            startActivity(new Intent(this, HomeActivity.class));
+        }
+    }
+
+    /*   ------ Method of check a string ------------
+
+        1. Return true when the string contains number.
+        2. Return false when the string doesn't contains a number
+    */
+    public boolean stringContainsNumber(String s)
+    {
+        return Pattern.compile("[0-9]").matcher(s).find();
     }
 }

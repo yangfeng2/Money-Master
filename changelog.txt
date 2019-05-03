@@ -169,5 +169,19 @@ Week 8, Wednesday 01-May-2019 [Yang] [3Hours 20Mins]
   - Retrieve data and check the type every time the user open the app.
 ------------------------------------
 
-
+Week 8, Wednesday 03-May-2019 [Yang] [5Hours ++]
+------------------------------------
+1. Add dark theme to every page.
+  - Overview page.
+  - About page.
+  - Lock page.
+2. Add a log page.
+  - Created a Log page button in setting page.
+  - Use to store log details.
+3. Verify the amount and category on income and expense.
+  - Amount should be more than 0 and not null.
+  - Category should not contains any number.
+  - Send the log details to the log screen if any problem occurred.
+  - Log details contains the current date.
+------------------------------------
 

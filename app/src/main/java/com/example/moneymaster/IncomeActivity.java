@@ -2,6 +2,7 @@ package com.example.moneymaster;
 
         import android.app.Activity;
         import android.content.ContentValues;
+        import android.content.Context;
         import android.content.Intent;
         import android.content.SharedPreferences;
         import android.database.sqlite.SQLiteDatabase;
@@ -14,8 +15,12 @@ package com.example.moneymaster;
         import android.widget.Toast;
 
         import java.text.DateFormat;
+        import java.util.ArrayList;
         import java.util.Calendar;
         import java.util.Date;
+        import java.util.HashSet;
+        import java.util.Set;
+        import java.util.regex.Pattern;
 
 public class IncomeActivity extends Activity {
 
@@ -26,6 +31,7 @@ public class IncomeActivity extends Activity {
     EditText amountText;
     EditText categoryText;
     String currentDate;
+    ArrayList<String> logMsg = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -53,6 +59,20 @@ public class IncomeActivity extends Activity {
         //check the theme selected
         checkTheme();
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        //save the log details with the sharedpreferences
+        SharedPreferences settings = getSharedPreferences("LogFile", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = settings.edit();
+        Set<String> LogSet = new HashSet<String>();
+        LogSet.addAll(logMsg);
+        editor.putStringSet("LogMessage",LogSet );
+
+        editor.commit();
     }
 
     //check the theme is dark or light
@@ -85,18 +105,65 @@ public class IncomeActivity extends Activity {
         return  currentTheme;
     }
 
-    //the function of insert data into database
+    /*--------------- the function of insert data into database ----------------------
+        1.Check the category is correct or incorrect
+        -Insert into SQL database if it is correct
+        -Show exception in log page if it is incorrect
+     */
     public  void insertData(String date, String amount, String type, String category)
     {
+        boolean checkText = true;
+
         ContentValues values = new ContentValues();
         values.put("date",date);
-        int amountInt = Integer.parseInt(amount);
-        values.put("amount",amountInt);
-        values.put("type",type);
-        values.put("category",category);
+        //int amountInt = Integer.parseInt(amount);
+        if (amount.equals(""))
+        {
+            //display a message to user
+            Toast.makeText(getApplicationContext(),"Please enter a correct amount ! ",Toast.LENGTH_LONG).show();
 
-        SQLiteDatabase db = myDBHelper.getWritableDatabase();
-        db.insert(TABLE_NAME, null,values);
-        startActivity(new Intent(this, HomeActivity.class));
+            //send log details to the log page with sharedpreference
+            Date currentTime = Calendar.getInstance().getTime();
+            String value = "Amount is incorrect. Occurred at "+currentTime;
+            logMsg.add(value);
+
+            checkText = false;
+        }
+        else {
+            values.put("amount",amount);
+        }
+        values.put("type",type);
+        if(stringContainsNumber(category))
+        {
+            //display a message to user
+            Toast.makeText(getApplicationContext(),"Please enter a correct category ! ",Toast.LENGTH_LONG).show();
+
+            //send log details to the log page with sharedpreference
+            Date currentTime = Calendar.getInstance().getTime();
+            String value = category +" is a wrong category format. Occurred at "+currentTime;
+            logMsg.add(value);
+
+            checkText = false;
+        }
+        else {
+            values.put("category",category);
+        }
+
+        if (checkText == true)
+        {
+            SQLiteDatabase db = myDBHelper.getWritableDatabase();
+            db.insert(TABLE_NAME, null,values);
+            startActivity(new Intent(this, HomeActivity.class));
+        }
+    }
+
+    /*   ------ Method of check a string ------------
+
+        1. Return true when the string contains number.
+        2. Return false when the string doesn't contains a number
+    */
+    public boolean stringContainsNumber(String s)
+    {
+        return Pattern.compile("[0-9]").matcher(s).find();
     }
 }

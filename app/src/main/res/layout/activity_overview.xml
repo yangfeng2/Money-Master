@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/overActivity"
     tools:context=".OverviewActivity">
 
     <ScrollView
@@ -51,7 +52,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.035"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_date"
+                app:layout_constraintTop_toBottomOf="@+id/netIncomeText"
                 tools:text="Biggest Expense" />
 
             <TextView
@@ -123,7 +124,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/totalIncome" />
 
             <TextView
-                android:id="@+id/text_date"
+                android:id="@+id/netIncomeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"

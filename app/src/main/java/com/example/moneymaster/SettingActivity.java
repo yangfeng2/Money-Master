@@ -50,6 +50,9 @@ public class SettingActivity extends AppCompatActivity {
         return  currentTheme;
     }
 
+    //go to the log screen
+    public void showLogScreen(View view) {startActivity(new Intent(this,LogActivity.class));}
+
     //go to the lock screen
     public void showLockScreen(View view) {startActivity(new Intent(this,LockActivity.class));}
 
@@ -90,6 +93,8 @@ public class SettingActivity extends AppCompatActivity {
         editor.apply();
 
         startActivity(new Intent(this,HomeActivity.class));
+
+        Toast.makeText(getApplicationContext(),"Changed to the Dark Theme. ",Toast.LENGTH_LONG).show();
     }
 
     //change the theme to light theme (default theme)
@@ -103,6 +108,7 @@ public class SettingActivity extends AppCompatActivity {
         editor.apply();
 
         startActivity(new Intent(this,HomeActivity.class));
+        Toast.makeText(getApplicationContext(),"Changed to the Light Theme. ",Toast.LENGTH_LONG).show();
     }
 
 }
