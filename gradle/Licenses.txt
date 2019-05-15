@@ -1,6 +1,11 @@
+Logo License:
+
 This work is licensed under the Creative Commons Attribution 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-Font: Copyright 2011 The Montserrat Project Authors
+-------------------------------------------------------------------------
+Font License: 
+
+Copyright 2011 The Montserrat Project Authors
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
